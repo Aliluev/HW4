@@ -1,16 +1,38 @@
 package com.netcracker.model;
 
+import javax.validation.constraints.*;
 import java.io.Serializable;
 
 public class Person implements Serializable {
-    private static final long serialVersionUID = 1L;
+
+    @Pattern(regexp = "[a-zA-Z]{1,30}")
+    @NotBlank
     private String surname;
+
+    @Pattern(regexp = "[a-zA-Z]{1,30}")
+    @NotBlank
     private String name;
+
+    @Pattern(regexp = "[a-zA-Z]{1,30}")
+    @NotBlank
     private String patronymic;
+
+    @Min(16)
+    @Max(110)
     private int age;
+
+    @Min(1)
     private int salary;
+
+    @Email
+    @NotBlank
     private String emailAdress;
+
+    @NotBlank
+    @Pattern(regexp = "[a-zA-Z]{1,30}")
     private String workPlace;
+
+    private static final long serialVersionUID = 1L;
 
     public String getSurname() {
         return surname;

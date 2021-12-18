@@ -57,52 +57,23 @@ public class PersonController {
         return "index";
     }
 
-
-
-
-        //Десерилизация
-
-
+    //Десерилизация
     @GetMapping("/find")
     public String findDataPerson(Model model) {
         model.addAttribute("person",new Person());
         return "searchPerson";
     }
 
-
     @GetMapping("/find-serch")
     public String searchDataPerson(
             @ModelAttribute Person person,Model model)throws ClassNotFoundException,IOException {
-        /*
-            try {
-                FileInputStream fileInputStream = new FileInputStream("C:\\Users\\tema_\\Documents\\" +
-                        person.getSurname() + person.getName() + ".ser");
-                ObjectInputStream objectInput = new ObjectInputStream(fileInputStream);
-                Person person1 = (Person) objectInput.readObject();
-                person.setAge(30);
-                //System.out.println(person1.getAge());
-                //model.addAttribute("person", person);
-            } catch (IOException | ClassNotFoundException e) {
-               // return "notFound";
-            }
-
-         */
         FileInputStream fileInputStream = new FileInputStream("C:\\Users\\tema_\\Documents\\" +
                 person.getSurname() + person.getName() + ".ser");
         ObjectInputStream objectInput = new ObjectInputStream(fileInputStream);
         Person person1 = (Person) objectInput.readObject();
-        person.setAge(30);
         model.addAttribute("person", person1);
         return "personDataPage";
 
     }
-
-    /*
-    @PostMapping("/index")
-    public String personSubmit(@ModelAttribute Person person){
-        return "personDataPage";
-    }
-
-     */
 
 }

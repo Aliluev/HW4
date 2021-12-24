@@ -45,7 +45,7 @@ public class EmailController {
             message.setText(myMassage);
              this.emailSender.send(message);
         } catch (IOException | ClassNotFoundException e) {
-            //return "notFound";
+            return "personNotFound";
         }
         return "index";
 

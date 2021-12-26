@@ -29,7 +29,7 @@ public class EmailController {
 
 
 
-    @GetMapping("/submitEmail")
+    @PostMapping("/submitEmail")
     public String sendSimpleEmail(@RequestParam("massage") String myMassage,
                                   @ModelAttribute Person person, Model model)
             throws IOException, ClassNotFoundException {

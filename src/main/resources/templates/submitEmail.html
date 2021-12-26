@@ -7,7 +7,7 @@
 
 <body>
 <h1>Form</h1>
-<form action="#" th:action="@{/submitEmail}" th:object="${person}"method="get">
+<form action="#" th:action="@{/submitEmail}" th:object="${person}"method="post">
 
     <h3>Read file</h3>
     <p>Surname : <input type="text" th:field="*{surname}" /></p>

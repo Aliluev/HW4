@@ -7,13 +7,13 @@
 
 <body>
 <h1>Form</h1>
-<form action="#" th:action="@{/load-serch}" th:object="${person}"method="get">
+<form action="#" th:action="@{/load}" th:object="${person}"method="post">
 
     <h3>Read file</h3>
     <p>Surname : <input type="text" name="secondName" th:field="*{surname}" /></p>
     <p>Name  : <input type="text" name="firstName" th:field="*{name}" /></p>
     <p>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Find" />
         <input type="reset" value="Reset" />
     </p>
 </form>

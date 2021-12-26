@@ -63,7 +63,7 @@ public class PersonController {
         return "searchPerson";
     }
 
-    @GetMapping("/load-serch")
+    @PostMapping("/load")
     public String searchDataPerson(
             @ModelAttribute Person person,Model model) {
         try {
@@ -79,14 +79,14 @@ public class PersonController {
 
     }
 
-    @GetMapping("/find")
+    @GetMapping("/find-by-file")
     public String findPerson(Model model) {
         model.addAttribute("person",new Person());
         return "findPersonByFile";
     }
 
 
-    @PostMapping("/find-file")
+    @PostMapping("/find-by-file")
     public String FindByFile(@RequestParam("file") String file, Model model) throws FileNotFoundException {
 try {
     FileReader reader = new FileReader(new File("C:\\Users\\tema_\\Documents\\" + file + ".txt"));
